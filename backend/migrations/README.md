@@ -1,17 +1,7 @@
 # Migrations
 
-Folder ini untuk menyimpan database migrations jika menggunakan Flask-Migrate.
+Folder ini tidak digunakan dalam project ini.
 
-Untuk setup Flask-Migrate (opsional):
-```bash
-flask db init
-flask db migrate -m "Initial migration"
-flask db upgrade
-```
-
-**Catatan:** Project ini saat ini menggunakan MySQL langsung tanpa Flask-Migrate. 
-Jika ingin menggunakan Flask-Migrate di masa depan, install terlebih dahulu:
-```bash
-pip install flask-migrate
-```
+Project ini menggunakan MySQL langsung tanpa Flask-Migrate. 
+Database schema dikelola secara manual melalui SQL scripts atau langsung di database.
 

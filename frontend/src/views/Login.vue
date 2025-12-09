@@ -32,21 +32,23 @@
           {{ error }}
         </div>
 
-        <button
-          type="submit"
-          :disabled="loading"
-          class="w-full py-3 bg-black text-white font-bold hover:bg-gray-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed border-2 border-black"
-        >
-          {{ loading ? 'Memproses...' : 'Login' }}
-        </button>
+        <div class="flex gap-2">
+          <button
+            type="submit"
+            :disabled="loading"
+            class="flex-1 py-3 bg-black text-white font-bold hover:bg-gray-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed border-2 border-black"
+          >
+            {{ loading ? 'Memproses...' : 'Login' }}
+          </button>
+          <button
+            type="button"
+            @click="router.push('/register')"
+            class="flex-1 py-3 bg-white text-black font-bold hover:bg-gray-200 transition-colors border-2 border-black"
+          >
+            Registrasi
+          </button>
+        </div>
       </form>
-
-      <p class="mt-6 text-center text-black">
-        Belum punya akun?
-        <router-link to="/register" class="font-bold underline hover:text-gray-700">
-          Daftar di sini
-        </router-link>
-      </p>
     </div>
   </div>
 </template>

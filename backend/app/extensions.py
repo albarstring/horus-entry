@@ -1,14 +1,17 @@
 from flask_cors import CORS
 from app.config import Config
 
-# Initialize extensions with CORS configuration
-cors = CORS(resources={
-    r"/*": {
-        "origins": "*",
-        "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-        "allow_headers": ["Content-Type", "Authorization"]
-    }
-})
+# Initialize CORS with explicit origins/methods/headers so all routes return
+# the correct Access-Control-* headers (especially for DELETE requests).
+def init_cors(app):
+    CORS(app, resources={
+        r"/*": {
+            "origins": Config.CORS_ORIGINS if hasattr(Config, "CORS_ORIGINS") else "*",
+            "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+            "allow_headers": ["Content-Type", "Authorization"],
+        }
+    })
+
 
 # Database connection helper
 class Database:

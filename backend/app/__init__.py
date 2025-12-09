@@ -1,6 +1,6 @@
 from flask import Flask
 from app.config import Config
-from app.extensions import cors, db
+from app.extensions import init_cors, db
 
 
 def create_app(config_class=Config):
@@ -8,7 +8,7 @@ def create_app(config_class=Config):
     app.config.from_object(config_class)
     
     # Initialize extensions
-    cors.init_app(app)
+    init_cors(app)
     db.init_app(app)
     
     # Register blueprints

@@ -10,7 +10,7 @@ horus/
 │   ├── app/
 │   │   ├── __init__.py
 │   │   ├── config.py
-│   │   ├── extensions.py          # db, migrate, jwt, cors
+│   │   ├── extensions.py          # db, cors
 │   │   ├── models/
 │   │   │   ├── __init__.py
 │   │   │   └── user.py

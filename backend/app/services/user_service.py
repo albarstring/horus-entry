@@ -107,12 +107,19 @@ class UserService:
         """Delete user"""
         conn = UserService.get_db_connection()
         cursor = conn.cursor()
-        
-        cursor.execute("DELETE FROM users WHERE id=%s", (user_id,))
-        conn.commit()
-        
-        cursor.close()
-        conn.close()
-        
-        return {"message": "User berhasil dihapus"}, 200
+
+        try:
+            cursor.execute("DELETE FROM users WHERE id=%s", (user_id,))
+            # Jika tidak ada baris yang dihapus, user tidak ditemukan
+            if cursor.rowcount == 0:
+                return {"message": "User tidak ditemukan"}, 404
+
+            conn.commit()
+            return {"message": "User berhasil dihapus"}, 200
+        except Exception as exc:
+            # Tangani error DB agar tidak meledak menjadi 500 tanpa pesan jelas
+            return {"message": f"Gagal menghapus user: {exc}"}, 500
+        finally:
+            cursor.close()
+            conn.close()
 

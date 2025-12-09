@@ -16,7 +16,7 @@ class User:
             'email': self.email,
             'nama': self.nama
         }
-    
+
     @classmethod
     def from_dict(cls, data):
         """Create User instance from dictionary"""
