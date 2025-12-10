@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-screen bg-white p-8">
     <div class="max-w-6xl mx-auto">
-      <h1 class="text-3xl font-bold mb-6 text-black border-b-2 border-black pb-2">
+      <h1 class="text-3xl font-bold mb-6 text-black ">
         DASHBOARD PENGGUNA
       </h1>
 

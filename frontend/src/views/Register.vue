@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-screen flex items-center justify-center bg-white">
     <div class="w-full max-w-md p-8 border-2 border-black">
-      <h1 class="text-3xl font-bold mb-6 text-black text-center">Daftar</h1>
+      <h1 class="text-3xl font-bold mb-6 text-black text-center">REGISTRASI AKUN</h1>
       
       <form @submit.prevent="handleRegister" class="space-y-4">
         <div>
@@ -65,16 +65,9 @@
           :disabled="loading"
           class="w-full py-3 bg-black text-white font-bold hover:bg-gray-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed border-2 border-black"
         >
-          {{ loading ? 'Memproses...' : 'Daftar' }}
+          {{ loading ? 'Memproses...' : 'Registrasi' }}
         </button>
       </form>
-
-      <p class="mt-6 text-center text-black">
-        Sudah punya akun?
-        <router-link to="/login" class="font-bold underline hover:text-gray-700">
-          Login di sini
-        </router-link>
-      </p>
     </div>
   </div>
 </template>
